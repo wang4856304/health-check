@@ -1,0 +1,31 @@
+server:
+   port: 10020
+
+eureka:
+   client:
+      service-url:
+         defaultZone: http://localhost:9320/eureka
+      register-with-eureka: true #控制是否注册
+      fetch-registry: true #控制是否可以检索服务
+
+register-center:
+   url: http://localhost:9320/eureka/apps
+
+spring:
+   profiles:
+      active: dev
+   messages:
+      basename: i18n/messages
+      encoding: UTF-8
+   application:
+      name: health-check
+
+logging:
+   config: classpath:log4j2.xml
+management:
+   security:
+      enabled: false
+
+
+
+
